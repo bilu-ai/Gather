@@ -116,10 +116,18 @@ function html(strings, ...values) {
 }
 function updateCountdowns() {
   document.querySelectorAll('[data-countdown]').forEach((timer) => {
-    const secondsLeft = Math.max(
-      0,
-      Math.floor((Date.parse(timer.dataset.countdown) - Date.now()) / 1000)
-    );
+    const millisecondsLeft = Date.parse(timer.dataset.countdown) - Date.now();
+    const value = timer.querySelector('.countdown-value');
+    const label = timer.querySelector('.countdown-label');
+    if (millisecondsLeft <= 0) {
+      timer.classList.add('is-past');
+      label.hidden = true;
+      value.textContent = 'This event has passed';
+      return;
+    }
+    timer.classList.remove('is-past');
+    label.hidden = false;
+    const secondsLeft = Math.floor(millisecondsLeft / 1000);
     const days = Math.floor(secondsLeft / 86400);
     const hours = Math.floor((secondsLeft % 86400) / 3600);
     const minutes = Math.floor((secondsLeft % 3600) / 60);
@@ -161,7 +169,8 @@ function render() {
             <h3>${esc(e.title)}</h3>
             <p>${esc(e.description)}</p>
             <p class="event-countdown" data-countdown="${e.startsAt}" aria-live="off">
-              Starts in <strong class="countdown-value"></strong>
+              <span class="countdown-label">Starts in</span>
+              <strong class="countdown-value"></strong>
             </p>
             <div class="event-meta">
               <span>⌖ ${esc(e.venue)}</span><span><b>${e.price}</b> / person</span>
