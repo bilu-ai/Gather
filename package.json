@@ -1,0 +1,7 @@
+{
+  "name": "k-explore-event-management",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Responsive event discovery and registration website",
+  "scripts": { "start": "python -m http.server 4173" }
+}
