@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta
+      name="description"
+      content="Find your next favorite experience with Gather — a thoughtful guide to events around you."
+    />
+    <title>Gather — Find your people, find your thing</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=14" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Gather home"
+        ><span class="brand-mark">g</span><span>gather<span class="brand-dot">.</span></span></a
+      >
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#events">Explore</a><a href="#about">About</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="icon-button theme-toggle"
+          aria-label="Switch color theme"
+          title="Switch color theme"
+        >
+          <span class="theme-icon">☾</span></button
+        ><a class="nav-cta" href="#events">Find an event <span>↗</span></a
+        ><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <main id="home">
+      <section class="hero wrap">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> GOOD THINGS ARE HAPPENING</div>
+          <h1>Your next<br />great <em>story</em><br />starts here.</h1>
+          <p class="hero-intro">
+            A little inspiration goes a long way. Find the gatherings, ideas, and people that make
+            your city feel like yours.
+          </p>
+          <a class="primary-button" href="#events">Explore what's on <span>↓</span></a>
+          <div class="social-proof">
+            <div class="avatar-stack"><span>J</span><span>M</span><span>A</span><span>+</span></div>
+            <div>
+              <strong>2,400+ curious people</strong><small>found their thing this month</small>
+            </div>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Colorful festival crowd illustration">
+          <div class="sun"></div>
+          <div class="art-label">
+            <span>YOUR CITY,</span><strong>IN GOOD<br />COMPANY.</strong>
+          </div>
+          <div class="art-spark spark-one">✳</div>
+          <div class="art-spark spark-two">✦</div>
+          <div class="art-people">
+            <i class="person p1"></i><i class="person p2"></i><i class="person p3"></i
+            ><i class="person p4"></i><i class="person p5"></i><i class="person p6"></i
+            ><i class="person p7"></i><i class="person p8"></i><i class="person p9"></i>
+          </div>
+          <div class="art-caption"><span>✳</span> MAKE ROOM FOR A LITTLE MAGIC</div>
+          <div class="ticket">EST.<br /><b>2024</b></div>
+        </div>
+        <div class="hero-bottom">
+          <span>SCROLL A LITTLE</span><span class="scroll-line"></span
+          ><span>THERE'S SOMETHING FOR EVERYONE</span>
+        </div>
+      </section>
+      <section class="events-section" id="events">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">THE GOOD STUFF</div>
+              <h2>Find your <em>kind</em> of fun.</h2>
+            </div>
+            <a href="#events" class="text-link" id="clearFilters">All events <span>↗</span></a>
+          </div>
+          <div class="discovery-bar">
+            <label class="search-box"
+              ><span>⌕</span
+              ><input
+                id="searchInput"
+                type="search"
+                placeholder="Try ‘live music’ or ‘Saturday’"
+                aria-label="Search events"
+              /><kbd>Ctrl / ⌘ K</kbd></label
+            >
+            <div class="category-list" role="group" aria-label="Filter by category">
+              <button class="category active" data-category="All">All events <span>06</span></button
+              ><button class="category" data-category="Music">♫ Music</button
+              ><button class="category" data-category="Art">✳ Art & culture</button
+              ><button class="category" data-category="Food">♨ Food</button
+              ><button class="category" data-category="Outdoors">↗ Outdoors</button>
+            </div>
+          </div>
+          <div class="results-meta">
+            <span id="resultsCount">6 lovely things to do</span
+            ><span>HANDPICKED FOR YOUR CITY <i>✳</i></span>
+          </div>
+          <div class="event-grid" id="eventGrid" aria-live="polite"></div>
+          <div class="empty-state" id="emptyState" hidden>
+            <span>✳</span>
+            <h3>No events found just yet.</h3>
+            <p>Try another search or category — the good stuff is out there.</p>
+            <button class="secondary-button" id="resetSearch">Show all events</button>
+          </div>
+        </div>
+      </section>
+      <section class="about-section wrap" id="about">
+        <div class="about-stamp">
+          ✳<span>GOOD<br />TOGETHER</span>
+        </div>
+        <div>
+          <div class="eyebrow">A LITTLE MORE HUMAN</div>
+          <h2>Less scrolling.<br /><em>More living.</em></h2>
+        </div>
+        <p>
+          We believe the best nights aren't planned too far ahead. Gather brings the local things
+          worth leaving the house for — made by your neighbors, for your kind of curious.
+        </p>
+      </section>
+      <section class="newsletter">
+        <div class="wrap newsletter-inner">
+          <div>
+            <div class="eyebrow">A GOOD THING IN YOUR INBOX</div>
+            <h2>Plans look good<br />on <em>you.</em></h2>
+          </div>
+          <form id="newsletterForm" class="newsletter-form">
+            <label for="newsletterEmail">Your email address</label>
+            <div class="newsletter-input">
+              <input
+                id="newsletterEmail"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              /><button type="submit" aria-label="Subscribe">→</button>
+            </div>
+            <small>This demo saves your email in this browser. No email is sent.</small>
+            <p class="newsletter-message" id="newsletterMessage" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer wrap">
+      <a class="brand" href="#home"
+        ><span class="brand-mark">g</span><span>gather<span class="brand-dot">.</span></span></a
+      ><span>Made for making memories. © 2026 Gather</span><a href="#home">Back to top ↑</a>
+    </footer>
+    <dialog id="eventDialog" class="event-dialog">
+      <button class="dialog-close" aria-label="Close event details">×</button>
+      <div id="dialogContent"></div>
+    </dialog>
+    <dialog id="registrationDialog" class="registration-dialog">
+      <button class="dialog-close" aria-label="Close registration">×</button>
+      <div class="eyebrow">SAVE YOUR SPOT</div>
+      <h2>Count me <em>in.</em></h2>
+      <p class="form-event-name" id="formEventName"></p>
+      <form id="registrationForm" novalidate>
+        <input type="hidden" id="selectedEvent" /><label for="fullName">Your name</label
+        ><input
+          id="fullName"
+          name="fullName"
+          autocomplete="name"
+          required
+          minlength="2"
+          placeholder="Alex Morgan"
+        /><span class="field-error" data-for="fullName"></span
+        ><label for="email">Email address</label
+        ><input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          placeholder="you@example.com"
+        /><span class="field-error" data-for="email"></span
+        ><label for="phone">Phone number <small>(optional)</small></label
+        ><input
+          id="phone"
+          name="phone"
+          type="tel"
+          autocomplete="tel"
+          placeholder="+91 98765 43210"
+        /><span class="field-error" data-for="phone"></span
+        ><button class="primary-button submit-registration" type="submit">
+          Save my spot <span>→</span>
+        </button>
+        <p class="form-note">Your details stay on this device for this demo.</p>
+      </form>
+      <div class="success-panel" id="registrationSuccess" hidden>
+        <span class="success-icon">✓</span>
+        <h3>You're on the list!</h3>
+        <p id="successCopy"></p>
+        <button class="secondary-button" id="doneRegistration">Lovely, thanks</button>
+      </div>
+    </dialog>
+    <script src="script.js?v=14" defer></script>
+  </body>
+</html>
